@@ -70,5 +70,7 @@ Docker Desktop ne peut s'installer que sous windows 10 Pro, Entreprise ou Educat
 ## Vérifications
 Pour vérifier que notre installation marche : 
   - http://localhost:3000/api
+  ![Alt text](images/Api_index.PNG "Api Index")
   
   - http://localhost:3000/api/status
+  ![Alt text](images/Api_status.PNG "Api Status")
