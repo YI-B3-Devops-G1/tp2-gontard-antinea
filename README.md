@@ -38,10 +38,10 @@ Docker Desktop ne peut s'installer que sous windows 10 Pro, Entreprise ou Educat
   | redis | 
   |postgres| 
   
-  #### Redis & Postgres : 
+  - **Redis & Postgres** : 
   Les bases de données sont créés avec une configuration par défaut directement grâce à docker compose
   
-  #### Nginx & Application
+  - **Nginx & Application** :
   Nginx et l'application sont créés et configurés à partir des Dockerfiles correspondant.
   
   
