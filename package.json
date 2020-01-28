@@ -1,0 +1,26 @@
+{
+  "name": "tp2_gontard_antinea",
+  "version": "1.0.0",
+  "description": "**mail**: antinea.gontard@ynov.com",
+  "main": "api.js",
+  "dependencies": {
+    "express": "^4.17.1",
+    "pg": "^7.17.1",
+    "redis": "^2.8.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node api.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/YI-B3-Devops-G1/TP2_Gontard_Antinea.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/YI-B3-Devops-G1/TP2_Gontard_Antinea/issues"
+  },
+  "homepage": "https://github.com/YI-B3-Devops-G1/TP2_Gontard_Antinea#readme"
+}
