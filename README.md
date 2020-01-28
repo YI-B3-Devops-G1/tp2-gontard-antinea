@@ -23,6 +23,7 @@ Docker Desktop ne peut s'installer que sous windows 10 Pro, Entreprise ou Educat
 |-- nginx
     |-- Dockerfile (fichier permettant de créer le conteneur de Nginx et de le configurer)
     |-- default.conf (configuration de Nginx)
+|-- images
 ```
 
 ## Infrastructure
