@@ -1,0 +1,67 @@
+# PRODUCTION
+version: '3.1'
+
+services:
+  reverseproxy:
+    build:
+      context: ./nginx
+      dockerfile: Dockerfile
+    depends_on:
+      - api
+    container_name: reverseproxy
+    hostname: reverseproxy
+    networks:
+      - network-api
+    restart: on-failure
+    ports:
+      - 3000:3000 # HOST:CLIENT
+  
+  api:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    depends_on:
+      - postgres
+      - redis
+    container_name: api
+    hostname: api
+    environment:
+      - NODE_ENV=production
+      - DB_HOST=postgres  # Container name
+      - DB_PORT=5432      # Default port : 5432
+      - DB_NAME=mainBDD
+      - DB_USER=admin
+      - DB_PASSWORD=admin
+      - REDIS_HOST=redis  # Container name
+    restart: on-failure
+    networks:
+      - network-db
+      - network-api
+    
+  postgres:
+    image: postgres:alpine
+    depends_on:
+      - redis
+    container_name: postgres
+    hostname: postgres
+    environment:
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD: admin
+      POSTGRES_DB: mainBDD
+      PGDATA: /data/postgres
+    restart: on-failure
+    volumes:
+      - ../postgres-persistant-data:/data/postgres
+    networks:
+      - network-db
+
+  redis:
+    image: redis:alpine3.11
+    container_name: redis
+    restart: on-failure
+    networks:
+      - network-db
+
+networks:
+  network-db:
+  network-nodejs:
