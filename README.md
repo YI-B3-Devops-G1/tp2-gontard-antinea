@@ -11,17 +11,17 @@
 - NodeJs
 - Terminal
 
-Docker Desktop ne peux s'installer que sous windows 10 Pro, Entreprise ou Education. Il à fallu donc upgarde l'OS sur une de ces versions.
+Docker Desktop ne peut s'installer que sous windows 10 Pro, Entreprise ou Education. Il a fallu donc upgardee l'OS sur une de ces versions.
 
 ## Contenu
 
 ```
-|-- Dockerfile (fichier permettant de crée le conteneur de l'application nodejs et la configurer)
+|-- Dockerfile (fichier permettant de créer le conteneur de l'application nodejs et de la configurer)
 |-- api.js (application)
 |-- package.json (dépendances de l'application)
-|-- docker-compose.yml (lien entre les différents containers pour crée notre infrastructure)
+|-- docker-compose.yml (lien entre les différents containers pour créer notre infrastructure)
 |-- nginx
-    |-- Dockerfile (fichier permettant de crée le conteneur de Nginx et de le configurer)
+    |-- Dockerfile (fichier permettant de créer le conteneur de Nginx et de le configurer)
     |-- default.conf (configuration de Nginx)
 ```
 
@@ -29,7 +29,7 @@ Docker Desktop ne peux s'installer que sous windows 10 Pro, Entreprise ou Educat
 ![Alt text](images/Infrastructure.PNG "Infrastructure")
 
 ### Conteneurs et réseaux
-  Les conteneurs sont crée et liée pour crée l'infrastructure grâce à docker compose.
+  Les conteneurs sont créés et liés pour créer l'infrastructure grâce à `docker compose`.
   
   | Conteneurs | networks |
   |------------|----------|
@@ -39,10 +39,10 @@ Docker Desktop ne peux s'installer que sous windows 10 Pro, Entreprise ou Educat
   |postgres| |
   
   #### Redis & Postgres : 
-  Les bases de données sont crée avec une configuration par défaut directement grâce à docker compose
+  Les bases de données sont créés avec une configuration par défaut directement grâce à docker compose
   
   #### Nginx & Application
-  Nginx et l'application sont crées et configurer à partir des Dockerfiles correspondant.
+  Nginx et l'application sont créés et configurés à partir des Dockerfiles correspondant.
   
   #### Les réseaux
   Les réseaux permettent de cloisonner les liens entres les différents conteneurs.
@@ -52,22 +52,22 @@ Docker Desktop ne peux s'installer que sous windows 10 Pro, Entreprise ou Educat
   
   
 ### Lancement
-  - Tout d'abord il faut build :
-  > docker-compose build
+  - Tout d'abord il faut build :   
+  `> docker-compose build` 
 
-  - Ensuite lancer l'infrastructure :
-  > docker-compose up
+  - Ensuite lancer l'infrastructure :   
+  `> docker-compose up`
 
 
 ## Installation
   - Cloner le repo
-  - Une fois dedans , installer les dépendances node :
-    > npm install
+  - Une fois dedans , installer les dépendances node :   
+    `> npm install`
     
-  - Lancer l'infrastructure :
-    > docker-compose up
+  - Lancer l'infrastructure :   
+    `> docker-compose up`
     
-## Verifications
+## Vérifications
 Pour vérifier que notre installation marche : 
   - http://localhost:3000/api
   
