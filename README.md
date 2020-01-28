@@ -26,6 +26,7 @@ Docker Desktop ne peux s'installer que sous windows 10 Pro, Entreprise ou Educat
 ```
 
 ## Infrastructure
+![Alt text](images/Infrastructure.PNG "Infrastructure")
 
 ### Conteneurs et réseaux
   Les conteneurs sont crée et liée pour crée l'infrastructure grâce à docker compose.
