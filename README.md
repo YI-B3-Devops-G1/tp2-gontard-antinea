@@ -23,6 +23,7 @@ Docker Desktop ne peut s'installer que sous windows 10 Pro, Entreprise ou Educat
 |-- nginx
     |-- Dockerfile (fichier permettant de créer le conteneur de Nginx et de le configurer)
     |-- default.conf (configuration de Nginx)
+|-- images
 ```
 
 ## Infrastructure
@@ -31,24 +32,18 @@ Docker Desktop ne peut s'installer que sous windows 10 Pro, Entreprise ou Educat
 ### Conteneurs et réseaux
   Les conteneurs sont créés et liés pour créer l'infrastructure grâce à `docker compose`.
   
-  | Conteneurs | networks |
-  |------------|----------|
-  | application (api) | network-api |
-  | nginx | network-db |
-  | redis | |
-  |postgres| |
+  | Conteneurs | 
+  |------------|
+  | application (api) | 
+  | nginx | 
+  | redis | 
+  |postgres| 
   
-  #### Redis & Postgres : 
+  - **Redis & Postgres** : 
   Les bases de données sont créés avec une configuration par défaut directement grâce à docker compose
   
-  #### Nginx & Application
+  - **Nginx & Application** :
   Nginx et l'application sont créés et configurés à partir des Dockerfiles correspondant.
-  
-  #### Les réseaux
-  Les réseaux permettent de cloisonner les liens entres les différents conteneurs.
-  
-   - **network-api** : réseau permettant de communiquer avec l'application.
-   - **network-db** : réseau permettant de communiquer avec les bases de données.
   
   
 ### Lancement
@@ -70,5 +65,7 @@ Docker Desktop ne peut s'installer que sous windows 10 Pro, Entreprise ou Educat
 ## Vérifications
 Pour vérifier que notre installation marche : 
   - http://localhost:3000/api
+  ![Alt text](images/Api_index.PNG "Api Index")
   
   - http://localhost:3000/api/status
+  ![Alt text](images/Api_status.PNG "Api Status")
