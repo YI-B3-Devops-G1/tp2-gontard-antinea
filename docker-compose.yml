@@ -1,6 +1,7 @@
 version: '3.1'
 
 services:
+  # Nginx container as reverse proxy
   reverseproxy:
     build:
       context: ./nginx
@@ -13,6 +14,7 @@ services:
     ports:
       - 3000:3000 # HOST:CLIENT
   
+  # API container
   api:
     build:
       context: .
@@ -24,14 +26,15 @@ services:
     hostname: api
     environment:
       - NODE_ENV=production
-      - DB_HOST=postgres  # Container name
+      - DB_HOST=postgres  # Postgres Container name
       - DB_PORT=5432      # Default port : 5432
       - DB_NAME=mainBDD
       - DB_USER=admin
       - DB_PASSWORD=admin
-      - REDIS_HOST=redis  # Container name
+      - REDIS_HOST=redis  # Redis Container name
     restart: on-failure
-    
+  
+  # Postgres container
   postgres:
     image: postgres
     depends_on:
@@ -47,11 +50,13 @@ services:
     volumes:
       - pgdata:/data/postgres
 
+  # Redis container
   redis:
     image: redis
     container_name: redis
     restart: on-failure
 
+# Volume for postgres 
 volumes:
     pgdata:
         external: true
